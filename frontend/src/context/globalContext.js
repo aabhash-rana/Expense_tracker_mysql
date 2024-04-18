@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"
 import axios from 'axios'
 
 
-const BASE_URL = "http://localhost:3000/api/v1/";
+const BASE_URL = "http://localhost:3000/";
 
 
 const GlobalContext = React.createContext()
@@ -36,7 +36,7 @@ export const GlobalProvider = ({children}) => {
     const totalIncome = () => {
         let totalIncome = 0;
         incomes.forEach((income) =>{
-            totalIncome = totalIncome + income.amount
+            totalIncome = totalIncome + Number(income.amount)
         })
 
         return totalIncome;
@@ -66,7 +66,7 @@ export const GlobalProvider = ({children}) => {
     const totalExpenses = () => {
         let totalIncome = 0;
         expenses.forEach((income) =>{
-            totalIncome = totalIncome + income.amount
+            totalIncome = totalIncome + Number(income.amount)
         })
 
         return totalIncome;

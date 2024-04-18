@@ -23,11 +23,11 @@ function Expenses() {
                     </div>
                     <div className="incomes">
                         {expenses.map((income) => {
-                            const {_id, title, amount, date, category, description, type} = income;
+                            const {id, title, amount, date, category, description, type} = income;
                             console.log(income)
                             return <IncomeItem
-                                key={_id}
-                                id={_id} 
+                                key={id}
+                                id={id} 
                                 title={title} 
                                 description={description} 
                                 amount={amount} 
